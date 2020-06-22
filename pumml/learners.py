@@ -22,7 +22,7 @@ from sklearn.utils import resample
 
 from mpl_toolkits.mplot3d import Axes3D
 
-from monty.serialization import dumpfn
+from monty.serialization import dumpfn, loadfn
 
 import pandas as pd
 import seaborn as sns
@@ -32,6 +32,11 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 from pylab import rcParams
+
+from pymatgen import MPRester, Composition, Structure, Lattice
+import re
+import pprint
+import json
 
 __author__ = "Nathan C. Frey, Jin Wang"
 __copyright__ = "MIT License"
@@ -605,3 +610,5 @@ class PUInteract:
         bgm_output = {"bgm_labels": bgm_labels, "bgm_prob": bgm_prob}
 
         return bgm_output
+class PUPredict():
+    
